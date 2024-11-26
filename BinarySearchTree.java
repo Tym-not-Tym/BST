@@ -1,4 +1,7 @@
+import java.util.Scanner;
+
 public class BinarySearchTree {
+
     private Node root;
 
     public void insert(Node node){//add value
@@ -19,6 +22,45 @@ public class BinarySearchTree {
             root.right = insertHelper(root.right, node);
         }
         return root;
+    }
+
+    public void dataInsert(BinarySearchTree tree) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        //assing an integer value key, to pass into BST
+        System.err.println("New user ID number: ");
+        int id = scanner.nextInt();
+
+        //username and information to pass under key 
+        System.err.println("First name: ");
+        String firstName = scanner.nextLine();
+        System.err.println("Last name: ");
+        String lastName = scanner.nextLine();
+        System.err.println("Phone number: ");
+        String phoneNumber = scanner.nextLine();
+        System.err.println("Address: ");
+        String address = scanner.nextLine();
+        System.err.println("City: ");
+        String city = scanner.nextLine();
+        System.err.println("State: ");
+        String state = scanner.nextLine();
+        System.err.println("Zip Code: ");
+        String zipCode = scanner.nextLine();
+        System.err.println("Email: ");
+        String email = scanner.nextLine();
+
+        //Store the user information isnide of a new node under teh asigned key
+        Node newNode = new Node(id, firstName, lastName, phoneNumber, address, city, state, zipCode, email);
+        tree.insert(newNode);
+
+        System.out.println("Key: " + id + "\nName: " + firstName + lastName + "\nAddress: "
+        + address + city + state + zipCode + "\nEmail: " + email + "\nHas been added..");
+
+    }//end dataInsert
+
+    public void display(){//display in order
+        displayHelper(root);
     }
 
     public void display(int option){//display in order, insert 1-3 to choose
@@ -148,4 +190,5 @@ public class BinarySearchTree {
             System.out.println(id + " could not be found");
         }
     }
+    
 }

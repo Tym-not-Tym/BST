@@ -5,14 +5,17 @@ public class Main {
     public static void main(String[] args){
         BinarySearchTree tree = new BinarySearchTree();
         
+        options(tree); 
 
     }
 
-    public static void Options() {
-
+    public static boolean options(BinarySearchTree tree) {
         Scanner scanner = new Scanner(System.in);
+
+        while (true){       
+       
         
-            System.out.println("DAT Dictionary");
+            System.out.println("\nDAT Dictionary");
             System.out.println("Options:");
             System.out.println("1. Add member");
             System.out.println("2. Modify member");
@@ -26,8 +29,7 @@ public class Main {
 
                 switch (choice) {
                     case 1:
-                       introduction();
-                       scanner.close();
+                       tree.dataInsert(tree);
                         break;
                     case 2:
                         //method
@@ -40,7 +42,7 @@ public class Main {
                         break;
                     case 5:
                         System.out.println("Exiting...");
-                        break;
+                        return false;
                     default:
                         System.out.println("Invalid choice. Please try again.");
                         throw new InputMismatchException("Invalid input");                        
@@ -48,8 +50,10 @@ public class Main {
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input. Please enter a number between 1 and 5.");
                 scanner.nextLine(); // Clear the invalid input
-            }
-            
+            }//end catch 
+
+        }//end do 
+
     }//end options
 
     public static void introduction() { //introduce
