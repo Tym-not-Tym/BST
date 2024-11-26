@@ -29,25 +29,25 @@ public class BinarySearchTree {
         Scanner scanner = new Scanner(System.in);
 
         //assing an integer value key, to pass into BST
-        System.err.println("New user ID number: ");
+        System.out.println("New user ID number: ");
         int id = scanner.nextInt();
 
         //username and information to pass under key 
-        System.err.println("First name: ");
+        System.out.println("First name: ");
         String firstName = scanner.nextLine();
-        System.err.println("Last name: ");
+        System.out.println("Last name: ");
         String lastName = scanner.nextLine();
-        System.err.println("Phone number: ");
+        System.out.println("Phone number: ");
         String phoneNumber = scanner.nextLine();
-        System.err.println("Address: ");
+        System.out.println("Address: ");
         String address = scanner.nextLine();
-        System.err.println("City: ");
+        System.out.println("City: ");
         String city = scanner.nextLine();
-        System.err.println("State: ");
+        System.out.println("State: ");
         String state = scanner.nextLine();
-        System.err.println("Zip Code: ");
+        System.out.println("Zip Code: ");
         String zipCode = scanner.nextLine();
-        System.err.println("Email: ");
+        System.out.println("Email: ");
         String email = scanner.nextLine();
 
         //Store the user information isnide of a new node under teh asigned key
