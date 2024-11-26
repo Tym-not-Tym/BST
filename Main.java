@@ -3,9 +3,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
-        BinarySearchTree tree = new BinarySearchTree();
-        Options(tree);
-        
+        BinarySearchTree tree = new BinarySearchTree();        
         options(tree); 
 
     }
@@ -13,9 +11,7 @@ public class Main {
     public static boolean options(BinarySearchTree tree) {
         Scanner scanner = new Scanner(System.in);
 
-        while (true){       
-       
-        
+        while (true){          
             System.out.println("\nDAT Dictionary");
             System.out.println("Options:");
             System.out.println("1. Add member");
