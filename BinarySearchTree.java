@@ -21,16 +21,33 @@ public class BinarySearchTree {
         return root;
     }
 
-    public void display(){//display in order
-        displayHelper(root);
+    public void display(int option){//display in order, insert 1-3 to choose
+        displayHelper(root, option);
     }
 
-    private void displayHelper(Node root){
-        if(root != null){
-            displayHelper(root.left);
-            System.out.println(root.data);
-            displayHelper(root.right);
+    private void displayHelper(Node root, int option){
+        switch (option) {
+            case 1://in order
+                if(root != null){
+                    displayHelper(root.left);
+                    System.out.println(root.data);
+                    displayHelper(root.right);
+                }
+                break;
+            case 2://post order
+                if(root != null){
+                    displayHelper(root.left);
+                    displayHelper(root.right);
+                    System.out.println(root.data);
+                }
+                break;
+            case 3://pre order
+                System.out.println(root.data);
+                displayHelper(root.left);
+                displayHelper(root.right);
+                break;
         }
+        
     }
 
     public boolean search(int data){//search for a node using data
