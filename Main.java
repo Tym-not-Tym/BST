@@ -33,12 +33,16 @@ public class Main {
                     case 2:
                         //method
                         break;
-                    case 3:
-                        //method
+                    case 3://delete member
+                        System.out.print("Enter the ID of the person: ");
+                        Scanner intScan = new Scanner(System.in);//local for case3
+                        int id = intScan.nextInt();
+                        intScan.close();
+                        tree.remove(id);
                         break;
                     case 4://modify
                         System.out.print("Enter ID of a pearson: ");
-                        Scanner scn = new Scanner(System.in);
+                        Scanner scn = new Scanner(System.in);//local for case4
                         int intScn = scn.nextInt();
                         Node current;
                         current = tree.search(intScn);
@@ -53,7 +57,7 @@ public class Main {
                             System.out.println("'6' - Exit");
 
                             intScn = scn.nextInt();
-                            Scanner scnStr = new Scanner(System.in);
+                            Scanner scnStr = new Scanner(System.in);//local for case4
 
                             switch (intScn) {
                                 case 1:
@@ -90,9 +94,9 @@ public class Main {
                                     break;
                             }
                         } while (intScn != 6);
-                            
-                        break;
-                    
+                        scn.close();
+                        scnStr.close();
+                        break;                    
                     case 5:
                         System.out.println("Exiting...");
                         break;
@@ -114,6 +118,7 @@ public class Main {
         System.out.println("-Member lookup and information(1)-");
         System.out.println("-Member addition (2)-");
         System.out.println("-Member removal (3)-");
+        System.out.println("-Member modification (4)-");
 
     }//end intro
 
