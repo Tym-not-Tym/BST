@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
 public class Node {
-    int data; //primary key
+    int id; //primary key
     String firstName, lastName, phoneNumber, address, city, state, zipCode, email; //user data  
     Node left;
     Node right;
 
-    public Node(int data, String firstName, String lastName, String phoneNumber, 
+    public Node(int id, String firstName, String lastName, String phoneNumber, 
     String address, String city, String state, String zipCode, String email){ 
         
         this.firstName = firstName;
@@ -17,6 +17,6 @@ public class Node {
         this.state = state;
         this.zipCode = zipCode;
         this.email = email;
-        this.data = data;
+        this.id = id;
     }
 }

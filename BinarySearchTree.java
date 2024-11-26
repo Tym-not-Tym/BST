@@ -6,13 +6,13 @@ public class BinarySearchTree {
     }
 
     private Node insertHelper(Node root, Node node){
-        int data = node.data;
+        int id = node.id;
 
         if(root == null){
             root = node;
             return root;
         }
-        else if (data < root.data){
+        else if (id < root.id){
             root.left = insertHelper(root.left, node);
         }
         else{
@@ -30,7 +30,9 @@ public class BinarySearchTree {
             case 1://in order
                 if(root != null){
                     displayHelper(root.left);
-                    System.out.println(root.data);
+                    System.out.println(root.id +" "+ root.firstName +" "+ root.lastName 
+                                        +" "+ root.phoneNum +" "+ root.address +" "+ root.city
+                                        +" "+ root.state +" "+ root.zipCode +" "+ root.email);
                     displayHelper(root.right);
                 }
                 break;
@@ -38,11 +40,15 @@ public class BinarySearchTree {
                 if(root != null){
                     displayHelper(root.left);
                     displayHelper(root.right);
-                    System.out.println(root.data);
+                    System.out.println(root.id +" "+ root.firstName +" "+ root.lastName 
+                                        +" "+ root.phoneNum +" "+ root.address +" "+ root.city
+                                        +" "+ root.state +" "+ root.zipCode +" "+ root.email);
                 }
                 break;
             case 3://pre order
-                System.out.println(root.data);
+                System.out.println(root.id +" "+ root.firstName +" "+ root.lastName 
+                                    +" "+ root.phoneNum +" "+ root.address +" "+ root.city
+                                    +" "+ root.state +" "+ root.zipCode +" "+ root.email);
                 displayHelper(root.left);
                 displayHelper(root.right);
                 break;
@@ -50,32 +56,32 @@ public class BinarySearchTree {
         
     }
 
-    public boolean search(int data){//search for a node using data
-        return searchHelper(root, data);
+    public boolean search(int id){//search for a node using id
+        return searchHelper(root, id);
     }
 
-    private boolean searchHelper(Node root, int data){
+    private boolean searchHelper(Node root, int id){
         if (root == null){
             return false;
         }
-        if(root.data == data){
+        if(root.id == id){
             return true;
         }
-        else if (data < root.data){
-            return searchHelper(root.left, data);
+        else if (id < root.id){
+            return searchHelper(root.left, id);
         }
         else {
-            return searchHelper(root.right, data);
+            return searchHelper(root.right, id);
         }
     }
     
-    public void remove(int data){
-        if (search(data)) {
+    public void remove(int id){
+        if (search(id)) {
             Node current = root;
             Node previous = null;
-            while(current.data != data){//finds a node with that data
+            while(current.id != id){//finds a node with that id
                 previous = current;
-                if (data < current.data){
+                if (id < current.id){
                     current = current.left;
                 }
                 else{
@@ -91,7 +97,7 @@ public class BinarySearchTree {
 
                 }
 
-                if(previous.data < data){
+                if(previous.id < id){
                     previous.right = null;
                 }
                 else {
@@ -112,7 +118,7 @@ public class BinarySearchTree {
                 }
                 else{
                     //replacing nodes if not root
-                    if(previous.data < data){//(*)
+                    if(previous.id < id){//(*)
                         previous.right = current;
                     }
                     else{
@@ -134,12 +140,12 @@ public class BinarySearchTree {
                 else{
                     current.right = temp.right;
                 }    
-                current.data = temp.data;
+                current.id = temp.id;
             }              
         } 
-        //if data do not exist
+        //if id do not exist
         else {
-            System.out.println(data + " could not be found");
+            System.out.println(id + " could not be found");
         }
     }
 }
