@@ -56,16 +56,16 @@ public class BinarySearchTree {
         
     }
 
-    public boolean search(int id){//search for a node using id
+    public Node search(int id){//search for a node using id
         return searchHelper(root, id);
     }
 
-    private boolean searchHelper(Node root, int id){
+    private Node searchHelper(Node root, int id){
         if (root == null){
-            return false;
+            return null;
         }
         if(root.id == id){
-            return true;
+            return root;
         }
         else if (id < root.id){
             return searchHelper(root.left, id);

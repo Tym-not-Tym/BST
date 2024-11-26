@@ -4,11 +4,12 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args){
         BinarySearchTree tree = new BinarySearchTree();
+        Options(tree);
         
 
     }
 
-    public static void Options() {
+    public static void Options(BinarySearchTree tree) {
 
         Scanner scanner = new Scanner(System.in);
         
@@ -36,8 +37,59 @@ public class Main {
                         //method
                         break;
                     case 4://modify
-                        
+                        System.out.print("Enter ID of a pearson: ");
+                        Scanner scn = new Scanner(System.in);
+                        int intScn = scn.nextInt();
+                        Node current;
+                        current = tree.search(intScn);
+
+                        System.out.println("\nEditing");
+                        System.out.println("'1' - Change Name");
+                        System.out.println("'2' - Change Address");
+                        System.out.println("'3' - Change City, State, Zip Code");
+                        System.out.println("'4' - Change Phone Number");
+                        System.out.println("'5' - Change Email");
+                        System.out.println("'6' - Exit");
+
+                        intScn = scn.nextInt();
+                        Scanner scnStr = new Scanner(System.in);
+
+                        switch (intScn) {
+                            case 1:
+                                
+                                System.out.print("First Name: ");
+                                current.firstName = scnStr.nextLine();
+                                System.out.println("Last Name: ");
+                                current.lastName = scnStr.nextLine();
+                                break;
+                            case 2:
+                                System.out.print("Address: ");
+                                current.address = scnStr.nextLine();
+                                break;
+                            case 3:
+                                System.out.print("City: ");
+                                current.city = scn3.nextLine();
+                                System.out.print("State: ");
+                                current.state = scnStr.nextLine();
+                                System.out.print("Zip Code: ");
+                                current.zipCode = scnStr.nextLine();
+                                break;
+                            case 4:
+                                System.out.print("Phone Number: ");
+                                current.phoneNumber = scnStr.nextLine();
+                                break;
+                            case 5:
+                                System.out.print("Email: ");
+                                current.email = scnStr.nextLine();
+                                break;
+                            case 6:
+                                break;                    
+                            default://input validation
+                                System.out.println("Enter A Valid Number!");
+                                break;
+                        }
                         break;
+                    
                     case 5:
                         System.out.println("Exiting...");
                         break;
