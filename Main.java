@@ -8,8 +8,9 @@ public class Main {
 
     }
 
-    public static boolean options(BinarySearchTree tree) {
+    public static void options(BinarySearchTree tree) {
         Scanner scanner = new Scanner(System.in);
+        
 
         while (true){          
             System.out.println("\nDAT Dictionary");
@@ -97,7 +98,7 @@ public class Main {
                         break;                    
                     case 5://exit
                         System.out.println("Exiting...");
-                        return false;
+                        return;
                     default:
                         System.out.println("Invalid choice. Please try again.");
                         throw new InputMismatchException("Invalid input");                        
