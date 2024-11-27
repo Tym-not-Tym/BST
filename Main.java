@@ -1,3 +1,8 @@
+/*
+Tym, Dylan, Agastya
+Lab 6
+this program will act as a database to store information about members of a company
+ */
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
