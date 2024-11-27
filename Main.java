@@ -72,7 +72,7 @@ public class Main {
                                     break;
                                 case 3:
                                     System.out.print("City: ");
-                                    current.city = scn3.nextLine();
+                                    current.city = scnStr.nextLine();
                                     System.out.print("State: ");
                                     current.state = scnStr.nextLine();
                                     System.out.print("Zip Code: ");
@@ -94,7 +94,7 @@ public class Main {
                             }
                         } while (intScn != 6);
                         scn.close();
-                        scnStr.close();
+                        
                         break;                    
                     case 5://exit
                         System.out.println("Exiting...");
