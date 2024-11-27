@@ -38,14 +38,15 @@ public class Main {
                         break;
 
                     case 4://display
-                        //method
+                    System.out.println("display");
+                        tree.display(choice);
                         break;
 
                     case 3://delete member
                         System.out.print("Enter the ID of the person: ");
                         Scanner intScan = new Scanner(System.in);//local for case3
                         int id = intScan.nextInt();
-                        intScan.close();
+                        //intScan.close();
                         tree.remove(id);
                         break;
 
