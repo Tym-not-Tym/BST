@@ -10,6 +10,7 @@ public class Main {
 
     public static void options(BinarySearchTree tree) {
         Scanner scanner = new Scanner(System.in);
+        int choice = 0;
         
 
         while (true){          
@@ -23,7 +24,7 @@ public class Main {
             System.out.print("Choose an option: ");
 
             try {
-                int choice = scanner.nextInt();
+                choice = scanner.nextInt();
 
                 switch (choice) {
                     case 1://add 
@@ -90,7 +91,7 @@ public class Main {
                         System.out.print("Enter the ID of the person: ");
                         Scanner intScan = new Scanner(System.in);//local for case3
                         int id = intScan.nextInt();
-                        intScan.close();
+                        
                         tree.remove(id);
                         break;
                     case 4://display
