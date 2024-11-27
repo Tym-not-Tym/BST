@@ -57,21 +57,26 @@ public class BinarySearchTree {
 
         System.out.println("Key: " + id + "\nName: " + firstName + lastName + "\nAddress: "
         + address + city + state + zipCode + "\nEmail: " + email + "\nHas been added..");
+        System.out.println("------------------------------");
 
     }//end dataInsert
 
     public void display(int option){//display in order, insert 1-3 to choose
+        
         displayHelper(root, option);
-    }
+
+    }//end of display 
 
     private void displayHelper(Node root, int option){
+        
         switch (option) {
             case 1://in order
                 if(root != null){
                     displayHelper(root.left, option);
-                    System.out.println(root.id +" "+ root.firstName +" "+ root.lastName 
-                                        +" "+ root.phoneNumber +" "+ root.address +" "+ root.city
-                                        +" "+ root.state +" "+ root.zipCode +" "+ root.email);
+                    System.out.println("ID: "+ root.id +"\nName: "+ root.firstName +"\nLast name: "+ root.lastName 
+                                        +"\nPhone number: "+ root.phoneNumber +"\nAddress: "+ root.address +"\nCity: "+ root.city
+                                        +"\nState: "+ root.state +"\nZip code: "+ root.zipCode +"\nEmail: "+ root.email);
+                                        System.out.println("------------------------------");
                     displayHelper(root.right, option);
                 }
                 break;
@@ -79,21 +84,24 @@ public class BinarySearchTree {
                 if(root != null){
                     displayHelper(root.left, option);
                     displayHelper(root.right, option);
-                    System.out.println(root.id +" "+ root.firstName +" "+ root.lastName 
-                                        +" "+ root.phoneNumber +" "+ root.address +" "+ root.city
-                                        +" "+ root.state +" "+ root.zipCode +" "+ root.email);
+                    System.out.println("ID: "+ root.id +"\nName: "+ root.firstName +"\nLast name: "+ root.lastName 
+                                        +"\nPhone number: "+ root.phoneNumber +"\nAddress: "+ root.address +"\nCity: "+ root.city
+                                        +"\nState: "+ root.state +"\nZip code: "+ root.zipCode +"\nEmail: "+ root.email);
+                                        System.out.println("------------------------------");
                 }
-                break;
+                break;  
             case 3://pre order
-                System.out.println(root.id +" "+ root.firstName +" "+ root.lastName 
-                                    +" "+ root.phoneNumber +" "+ root.address +" "+ root.city
-                                    +" "+ root.state +" "+ root.zipCode +" "+ root.email);
+                System.out.println("ID: "+ root.id +"\nName: "+ root.firstName +"\nLast name: "+ root.lastName 
+                                    +"\nPhone number: "+ root.phoneNumber +"\nAddress: "+ root.address +"\nCity: "+ root.city
+                                    +"\nState: "+ root.state +"\nZip code: "+ root.zipCode +"\nEmail: "+ root.email);
+                                    System.out.println("------------------------------");
                 displayHelper(root.left, option);
                 displayHelper(root.right, option);
                 break;
-        }
+
+        }//end of option
         
-    }
+    }//end of displayHelp
 
     public Node search(int id){//search for a node using id
         return searchHelper(root, id);
@@ -186,5 +194,15 @@ public class BinarySearchTree {
             System.out.println(id + " could not be found");
         }
     }
-    
-}
+    public void id(Node current) {
+        // Display the current details of the person
+    System.out.println("\nCurrent Information:");
+    System.out.println("ID: " + current.id);
+    System.out.println("Name: " + current.firstName + " " + current.lastName);
+    System.out.println("Address: " + current.address);
+    System.out.println("City: " + current.city + ", State: " + current.state + " " + current.zipCode);
+    System.out.println("Phone Number: " + current.phoneNumber);
+    System.out.println("Email: " + current.email);
+    }
+
+}//end of BST

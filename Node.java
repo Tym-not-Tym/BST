@@ -18,4 +18,5 @@ public class Node {
         this.email = email;
         this.id = id;
     }
-}
+    
+}//end of class
