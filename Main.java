@@ -29,16 +29,6 @@ public class Main {
                        tree.dataInsert(tree);
                         break;
                     case 2://modify
-                        //method
-                        break;
-                    case 3://delete member
-                        System.out.print("Enter the ID of the person: ");
-                        Scanner intScan = new Scanner(System.in);//local for case3
-                        int id = intScan.nextInt();
-                        intScan.close();
-                        tree.remove(id);
-                        break;
-                    case 4://display
                         System.out.print("Enter ID of a pearson: ");
                         Scanner scn = new Scanner(System.in);//local for case4
                         int intScn = scn.nextInt();
@@ -62,7 +52,7 @@ public class Main {
                                     
                                     System.out.print("First Name: ");
                                     current.firstName = scnStr.nextLine();
-                                    System.out.println("Last Name: ");
+                                    System.out.print("Last Name: ");
                                     current.lastName = scnStr.nextLine();
                                     break;
                                 case 2:
@@ -92,8 +82,18 @@ public class Main {
                                     break;
                             }
                         } while (intScn != 6);
-                        scn.close();
                         
+                        
+                        break;
+                    case 3://delete member
+                        System.out.print("Enter the ID of the person: ");
+                        Scanner intScan = new Scanner(System.in);//local for case3
+                        int id = intScan.nextInt();
+                        intScan.close();
+                        tree.remove(id);
+                        break;
+                    case 4://display
+                        tree.display(1);
                         break;                    
                     case 5://exit
                         System.out.println("Exiting...");

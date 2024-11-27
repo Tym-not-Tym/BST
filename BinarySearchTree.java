@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class BinarySearchTree {
 
-    private Node root;
+    public Node root;
 
     public void insert(Node node){//add value
         root = insertHelper(root, node);
@@ -26,29 +26,30 @@ public class BinarySearchTree {
 
     public void dataInsert(BinarySearchTree tree) {
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner scannerInt = new Scanner(System.in);
+        Scanner scanStr = new Scanner(System.in);
 
         //assing an integer value key, to pass into BST
-        System.out.println("New user ID number: ");
-        int id = scanner.nextInt();
+        System.out.print("New user ID number: ");
+        int id = scannerInt.nextInt();
 
         //username and information to pass under key 
-        System.out.println("First name: ");
-        String firstName = scanner.nextLine();
-        System.out.println("Last name: ");
-        String lastName = scanner.nextLine();
-        System.out.println("Phone number: ");
-        String phoneNumber = scanner.nextLine();
-        System.out.println("Address: ");
-        String address = scanner.nextLine();
-        System.out.println("City: ");
-        String city = scanner.nextLine();
-        System.out.println("State: ");
-        String state = scanner.nextLine();
-        System.out.println("Zip Code: ");
-        String zipCode = scanner.nextLine();
-        System.out.println("Email: ");
-        String email = scanner.nextLine();
+        System.out.print("First name: ");
+        String firstName = scanStr.nextLine();
+        System.out.print("Last name: ");
+        String lastName = scanStr.nextLine();
+        System.out.print("Phone number: ");
+        String phoneNumber = scanStr.nextLine();
+        System.out.print("Address: ");
+        String address = scanStr.nextLine();
+        System.out.print("City: ");
+        String city = scanStr.nextLine();
+        System.out.print("State: ");
+        String state = scanStr.nextLine();
+        System.out.print("Zip Code: ");
+        String zipCode = scanStr.nextLine();
+        System.out.print("Email: ");
+        String email = scanStr.nextLine();
 
         //Store the user information isnide of a new node under teh asigned key
         Node newNode = new Node(id, firstName, lastName, phoneNumber, address, city, state, zipCode, email);
@@ -59,10 +60,6 @@ public class BinarySearchTree {
 
     }//end dataInsert
 
-    public void display(){//display in order
-        displayHelper(root);
-    }
-
     public void display(int option){//display in order, insert 1-3 to choose
         displayHelper(root, option);
     }
@@ -71,28 +68,28 @@ public class BinarySearchTree {
         switch (option) {
             case 1://in order
                 if(root != null){
-                    displayHelper(root.left);
+                    displayHelper(root.left, option);
                     System.out.println(root.id +" "+ root.firstName +" "+ root.lastName 
-                                        +" "+ root.phoneNum +" "+ root.address +" "+ root.city
+                                        +" "+ root.phoneNumber +" "+ root.address +" "+ root.city
                                         +" "+ root.state +" "+ root.zipCode +" "+ root.email);
-                    displayHelper(root.right);
+                    displayHelper(root.right, option);
                 }
                 break;
             case 2://post order
                 if(root != null){
-                    displayHelper(root.left);
-                    displayHelper(root.right);
+                    displayHelper(root.left, option);
+                    displayHelper(root.right, option);
                     System.out.println(root.id +" "+ root.firstName +" "+ root.lastName 
-                                        +" "+ root.phoneNum +" "+ root.address +" "+ root.city
+                                        +" "+ root.phoneNumber +" "+ root.address +" "+ root.city
                                         +" "+ root.state +" "+ root.zipCode +" "+ root.email);
                 }
                 break;
             case 3://pre order
                 System.out.println(root.id +" "+ root.firstName +" "+ root.lastName 
-                                    +" "+ root.phoneNum +" "+ root.address +" "+ root.city
+                                    +" "+ root.phoneNumber +" "+ root.address +" "+ root.city
                                     +" "+ root.state +" "+ root.zipCode +" "+ root.email);
-                displayHelper(root.left);
-                displayHelper(root.right);
+                displayHelper(root.left, option);
+                displayHelper(root.right, option);
                 break;
         }
         
