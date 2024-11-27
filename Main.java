@@ -98,7 +98,7 @@ public class Main {
                         break;                    
                     case 5://exit
                         System.out.println("Exiting...");
-                        break;
+                        return;
                     default:
                         System.out.println("Invalid choice. Please try again.");
                         throw new InputMismatchException("Invalid input");                        

@@ -115,7 +115,7 @@ public class BinarySearchTree {
     }
     
     public void remove(int id){
-        if (search(id)) {
+        if (search(id) != null) {
             Node current = root;
             Node previous = null;
             while(current.id != id){//finds a node with that id
@@ -132,11 +132,10 @@ public class BinarySearchTree {
             //removes node if it's a leaf
             if(current.left == null && current.right == null){
                 
-                if (current.left == null){
-
+                if (previous == null){
+                    root = null;
                 }
-
-                if(previous.id < id){
+                else if(previous.id < id){
                     previous.right = null;
                 }
                 else {
