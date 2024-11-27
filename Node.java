@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 public class Node {
     int id; //primary key

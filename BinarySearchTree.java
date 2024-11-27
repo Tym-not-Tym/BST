@@ -118,7 +118,7 @@ public class BinarySearchTree {
         if (search(id) != null) {
             Node current = root;
             Node previous = null;
-            while(current.id != id){//finds a node with that id
+            while(current.id != id){//finds a node with that id 
                 previous = current;
                 if (id < current.id){
                     current = current.left;

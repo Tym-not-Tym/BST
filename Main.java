@@ -2,8 +2,14 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
+    
     public static void main(String[] args){
-        BinarySearchTree tree = new BinarySearchTree();        
+    
+        BinarySearchTree tree = new BinarySearchTree(); 
+        tree.insert(new Node(101, "John", "Doe", "123 Elm St", "Springfield", "IL", "62701", "555-1234", "johndoe@example.com"));
+        tree.insert(new Node(102, "Jane", "Smith", "456 Oak St", "Champaign", "IL", "61820", "555-5678", "janesmith@example.com"));
+        tree.insert(new Node(103, "Mike", "Johnson", "789 Pine St", "Decatur", "IL", "62521", "555-8765", "mikejohnson@example.com"));
+        introduction();       
         options(tree); 
 
     }
@@ -26,10 +32,24 @@ public class Main {
                 int choice = scanner.nextInt();
 
                 switch (choice) {
+
                     case 1://add 
                        tree.dataInsert(tree);
                         break;
-                    case 2://modify
+
+                    case 4://display
+                        //method
+                        break;
+
+                    case 3://delete member
+                        System.out.print("Enter the ID of the person: ");
+                        Scanner intScan = new Scanner(System.in);//local for case3
+                        int id = intScan.nextInt();
+                        intScan.close();
+                        tree.remove(id);
+                        break;
+
+                    case 2: //modify
                         System.out.print("Enter ID of a pearson: ");
                         Scanner scn = new Scanner(System.in);//local for case4
                         int intScn = scn.nextInt();
@@ -53,7 +73,7 @@ public class Main {
                                     
                                     System.out.print("First Name: ");
                                     current.firstName = scnStr.nextLine();
-                                    System.out.print("Last Name: ");
+                                    System.out.println("Last Name: ");
                                     current.lastName = scnStr.nextLine();
                                     break;
                                 case 2:
@@ -83,18 +103,8 @@ public class Main {
                                     break;
                             }
                         } while (intScn != 6);
+                        scn.close();
                         
-                        
-                        break;
-                    case 3://delete member
-                        System.out.print("Enter the ID of the person: ");
-                        Scanner intScan = new Scanner(System.in);//local for case3
-                        int id = intScan.nextInt();
-                        intScan.close();
-                        tree.remove(id);
-                        break;
-                    case 4://display
-                        tree.display(1);
                         break;                    
                     case 5://exit
                         System.out.println("Exiting...");
@@ -116,10 +126,6 @@ public class Main {
         
         System.out.println("DAT dictionary:");
         System.out.println("Ensure all your memebers are in one place");
-        System.out.println("-Member lookup and information(1)-");
-        System.out.println("-Member addition (2)-");
-        System.out.println("-Member removal (3)-");
-        System.out.println("-Member modification (4)-");
 
     }//end intro
 
